@@ -20,9 +20,9 @@ public class LowerArmController : MonoBehaviour {
 			{
 				Debug.Log("RELEASE");
 				Ball.transform.parent = null;
-				Ball.GetComponent<Rigidbody>().isKinematic = false;
-				Ball.GetComponent<Rigidbody>().AddForce(transform.right * GetComponent<Rigidbody>().angularVelocity.z * 0.6f);
+//				Ball.GetComponent<Rigidbody>().AddForce(transform.right * GetComponent<Rigidbody>().angularVelocity.z * 0.6f);
 				Ball.GetComponent<BallController>().OnRelease();
+				Ball.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
 			}
 		}
 		

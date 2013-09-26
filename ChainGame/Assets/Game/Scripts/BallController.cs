@@ -23,6 +23,7 @@ public class BallController : MonoBehaviour {
 	
 	public void OnRelease()
 	{
+		_rigidBody.isKinematic = false;
 		_releaseCooldownTimer = 0.5f;
 	}
 	
@@ -30,7 +31,7 @@ public class BallController : MonoBehaviour {
 	{
 		if(!_rigidBody.isKinematic && _releaseCooldownTimer <= 0.0f)
 		{
-			if(_rigidBody.angularVelocity.sqrMagnitude < 0.1f && _rigidBody.velocity.sqrMagnitude < 0.1f)
+			if(_rigidBody.angularVelocity.sqrMagnitude < 0.01f && _rigidBody.velocity.sqrMagnitude < 0.01f)
 			{
 				Reset();
 			}
