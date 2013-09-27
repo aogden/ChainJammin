@@ -6,6 +6,9 @@ public class BallController : MonoBehaviour {
 	public Transform ResetTransform;
 	public GameController.Team BallsTeam;
 	
+	public delegate void ScoreDelegate(Transform hitSpot, GameController.Team team);
+	public ScoreDelegate OnScore;
+	
 	private Rigidbody _rigidBody;
 	private float _releaseCooldownTimer;
 
@@ -44,10 +47,18 @@ public class BallController : MonoBehaviour {
 		{	
 			Reset();
 		}
-		else if(other.gameObject.name.Equals("cup"))
+		else if(other.gameObject.name.Equals(GetTargetCupName()))
 		{
-			BroadcastMessage("OnScore",BallsTeam,SendMessageOptions.DontRequireReceiver);
+			if(OnScore != null)
+			{
+				OnScore(other.transform,BallsTeam);
+			}
 		}
+	}
+	
+	string GetTargetCupName()
+	{
+		return "cup"+BallsTeam.index;
 	}
 		
 	void Reset()
