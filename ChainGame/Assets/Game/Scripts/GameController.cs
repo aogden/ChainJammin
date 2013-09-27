@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
 		_teams[0] = new Team();
 		_teams[0].index = 0;
 		_teams[1] = new Team();
-		_teams[0].index = 1;
+		_teams[1].index = 1;
 		AssignTeams();
 		CreateArms();
 	}
@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour {
 			}
 		}
 		
+		Debug.Log("Team 1 {"+_teams[0].lowerArm+","+_teams[0].upperArm+"} Team 2 {"+_teams[1].lowerArm+","+_teams[1].upperArm+"}");
 	}
 	
 	void CreateArms()
@@ -64,7 +65,7 @@ public class GameController : MonoBehaviour {
 			_arms[i].transform.localPosition = Vector3.zero;
 			_arms[i].transform.localRotation = Quaternion.identity;
 			_arms[i].GetComponentInChildren<UpperArmController>().SetPlayer(_teams[i].upperArm);
-			_arms[i].GetComponentInChildren<LowerArmController>().SetPlayer(_teams[i].lowerArm, GetTeamForPlayer(_teams[i].lowerArm));
+			_arms[i].GetComponentInChildren<LowerArmController>().SetPlayer(_teams[i].lowerArm, _teams[i]);
 		}
 		
 	}

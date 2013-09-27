@@ -5,6 +5,7 @@ public class BallController : MonoBehaviour {
 	
 	public Transform ResetTransform;
 	public GameController.Team BallsTeam;
+	public int teamIndex;
 	
 	public delegate void ScoreDelegate(Transform hitSpot, GameController.Team team);
 	public ScoreDelegate OnScore;
@@ -23,6 +24,7 @@ public class BallController : MonoBehaviour {
 		{
 			_releaseCooldownTimer -= Time.deltaTime;
 		}
+		teamIndex = BallsTeam.index;
 	}
 	
 	public void OnRelease()
@@ -35,7 +37,7 @@ public class BallController : MonoBehaviour {
 	{
 		if(!_rigidBody.isKinematic && _releaseCooldownTimer <= 0.0f)
 		{
-			if(_rigidBody.velocity.sqrMagnitude < 1f)
+			if(_rigidBody.velocity.sqrMagnitude < 0.5f)
 			{
 				Reset();
 			}
