@@ -88,19 +88,19 @@ public class GameController : MonoBehaviour {
 		return ChainJam.PLAYER.PLAYER1;
 	}
 	
-	public static Material MaterialForPlayer(ChainJam.PLAYER player)
+	public static Color MaterialForPlayer(ChainJam.PLAYER player)
 	{
 		switch (player)
 		{
 		case ChainJam.PLAYER.PLAYER1:
-			return Resources.Load("Materials/Player1") as Material;
+			return new Color(0.19215686274f,0.19607843137f,0.19607843137f,1f);
 		case ChainJam.PLAYER.PLAYER2:
-			return Resources.Load("Materials/Player2") as Material;
+			return new Color(0.15294117647f,0.67843137254f,0.89019607843f,1f);
 		case ChainJam.PLAYER.PLAYER3:
-			return Resources.Load("Materials/Player3") as Material;
+			return new Color(0.93333333333f,0.21176470588f,0.54117647058f,1f);
 		case ChainJam.PLAYER.PLAYER4:
-			return Resources.Load("Materials/Player4") as Material;
+			return new Color(0.690196078f,0.81960784313f,0.21176470588f,1f);
 		}
-		return Resources.Load("Materials/Player1") as Material;
+		return Color.red;
 	}
 }

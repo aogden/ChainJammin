@@ -15,7 +15,7 @@ public class LowerArmController : MonoBehaviour {
 	public void SetPlayer(ChainJam.PLAYER player)
 	{
 		Player = player;
-		GetComponent<MeshRenderer>().sharedMaterial = GameController.MaterialForPlayer(player);
+		transform.FindChild("lowerArt").GetComponent<MeshRenderer>().material.SetColor("_Color",GameController.MaterialForPlayer(player));
 	}
 	
 	// Update is called once per frame
