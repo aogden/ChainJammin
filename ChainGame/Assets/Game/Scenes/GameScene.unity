@@ -619,6 +619,10 @@ Prefab:
       propertyPath: m_Name
       value: cup0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: d2863d8bca1d045959ea34c05a6c32a8, type: 2}
+      propertyPath: m_Constraints
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2863d8bca1d045959ea34c05a6c32a8, type: 2}
   m_RootGameObject: {fileID: 684126817}
@@ -924,7 +928,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 72
+  m_Constraints: 24
   m_CollisionDetection: 0
 --- !u!1001 &803790741
 Prefab:

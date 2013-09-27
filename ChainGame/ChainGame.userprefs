@@ -1,6 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/TeamScoreHUD.cs">
+    <Files>
+      <File FileName="Assets/Chain Jam/Scripts/ChainJam.cs" Line="244" Column="17" />
+      <File FileName="Assets/Game/Scripts/UpperArmController.cs" Line="13" Column="43" />
+      <File FileName="Assets/Game/Scripts/LowerArmController.cs" Line="18" Column="56" />
+      <File FileName="Assets/Game/Scripts/BallController.cs" Line="55" Column="5" />
+      <File FileName="Assets/Game/Scripts/GameController.cs" Line="108" Column="16" />
+      <File FileName="Assets/Game/Scripts/TeamScoreHUD.cs" Line="11" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
