@@ -23,6 +23,10 @@ public class LowerArmController : MonoBehaviour {
 		
 		if(ChainJam.GetButtonPressed(Player, ChainJam.BUTTON.A))
 		{
+			GetComponent<Rigidbody>().AddTorque(0.0f,0.0f,500f);
+		}
+		else if(ChainJam.GetButtonJustReleased(Player,ChainJam.BUTTON.A))
+		{
 			if(Ball != null && Ball.GetComponent<Rigidbody>().isKinematic)
 			{
 				Debug.Log("RELEASE");
@@ -32,6 +36,5 @@ public class LowerArmController : MonoBehaviour {
 				Ball.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
 			}
 		}
-		
 	}
 }
