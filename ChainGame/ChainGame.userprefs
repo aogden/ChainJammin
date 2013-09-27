@@ -1,15 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/LowerArmController.cs">
-    <Files>
-      <File FileName="Assets/Chain Jam/Scripts/ChainJam.cs" Line="73" Column="44" />
-      <File FileName="Assets/Game/Scripts/UpperArmController.cs" Line="13" Column="43" />
-      <File FileName="Assets/Game/Scripts/LowerArmController.cs" Line="25" Column="4" />
-      <File FileName="Assets/Game/Scripts/BallController.cs" Line="33" Column="4" />
-      <File FileName="Assets/Chain Jam/Plugins/iTween.cs" Line="51" Column="10" />
-      <File FileName="Assets/Game/Scripts/GameController.cs" Line="93" Column="18" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

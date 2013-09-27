@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	
 	public struct Team{
 		public int index;
+		public int score;
 		public ChainJam.PLAYER lowerArm;
 		public ChainJam.PLAYER upperArm;
 	}
@@ -25,6 +26,12 @@ public class GameController : MonoBehaviour {
 		_teams[1].index = 1;
 		AssignTeams();
 		CreateArms();
+		
+		GameObject[] balls = GameObject.FindGameObjectsWithTag("Balls");
+		foreach(GameObject ball in balls)
+		{
+			ball.GetComponent<BallController>().OnScore += OnScore;
+		}
 	}
 	
 	void AssignTeams()
@@ -86,6 +93,21 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+	
+	void OnScore(Transform hitSpot, Team scoringTeam)
+	{
+		ChainJam.AddPoints(scoringTeam.lowerArm,1);
+		ChainJam.AddPoints(scoringTeam.upperArm,1);
+		if(scoringTeam.score >= 3)
+		{
+			EndGame();
+		}
+	}
+	
+	void EndGame()
+	{
+		ChainJam.GameEnd();
 	}
 	
 	public static ChainJam.PLAYER PlayerForIndex(int index)

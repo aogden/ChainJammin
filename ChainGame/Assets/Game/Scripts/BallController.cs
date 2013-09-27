@@ -53,6 +53,7 @@ public class BallController : MonoBehaviour {
 		{
 			if(OnScore != null)
 			{
+				BallsTeam.score ++;
 				OnScore(other.transform,BallsTeam);
 			}
 		}
