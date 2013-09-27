@@ -27,26 +27,24 @@ public class GameController : MonoBehaviour {
 	void AssignTeams()
 	{
 		bool[] teamPlacements = new bool[4];
-		for(int i = (int)ChainJam.PLAYER.PLAYER1; i <= (int)ChainJam.PLAYER.PLAYER4; i++)
+		for(int i = 0; i < 4; i++)
 		{
-			while(true)
+			bool placed = false;
+			while(!placed)
 			{
 				int randomPlacementIndex = Random.Range(0,4);
-				Debug.Log("Trying to get team assignment at "+randomPlacementIndex);
 				if(!teamPlacements[randomPlacementIndex])
 				{
 					teamPlacements[randomPlacementIndex] = true;
-					Team assignedTeam = _teams[randomPlacementIndex / 2];
 					if(randomPlacementIndex % 2 == 0)
 					{
-						assignedTeam.lowerArm = (ChainJam.PLAYER)i;
+						_teams[randomPlacementIndex / 2].lowerArm = PlayerForIndex(i);
 					}
 					else
 					{
-						assignedTeam.upperArm = (ChainJam.PLAYER)i;
+						_teams[randomPlacementIndex / 2].upperArm = PlayerForIndex(i);
 					}
-					Debug.Log("Found team assignment at "+randomPlacementIndex);
-					break;
+					placed = true;
 				}
 			}
 		}
@@ -71,5 +69,38 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+	
+	public static ChainJam.PLAYER PlayerForIndex(int index)
+	{
+		switch (index)
+		{
+		case 0:
+			return ChainJam.PLAYER.PLAYER1;
+		case 1:
+			return ChainJam.PLAYER.PLAYER2;
+		case 2:
+			return ChainJam.PLAYER.PLAYER3;
+		case 3:
+			return ChainJam.PLAYER.PLAYER4;
+		}
+		
+		return ChainJam.PLAYER.PLAYER1;
+	}
+	
+	public static Material MaterialForPlayer(ChainJam.PLAYER player)
+	{
+		switch (player)
+		{
+		case ChainJam.PLAYER.PLAYER1:
+			return Resources.Load("Materials/Player1.mat") as Material;
+		case ChainJam.PLAYER.PLAYER2:
+			return Resources.Load("Materials/Player2.mat") as Material;
+		case ChainJam.PLAYER.PLAYER3:
+			return Resources.Load("Materials/Player3.mat") as Material;
+		case ChainJam.PLAYER.PLAYER4:
+			return Resources.Load("Materials/Player4.mat") as Material;
+		}
+		return Resources.Load("Materials/Player1.mat") as Material;
 	}
 }
