@@ -3,8 +3,9 @@ using System.Collections;
 
 public class LowerArmController : MonoBehaviour {
 	
-	public ChainJam.PLAYER Player;
 	public GameObject Ball;
+	
+	public ChainJam.PLAYER Player;
 
 	// Use this for initialization
 	void Start () {

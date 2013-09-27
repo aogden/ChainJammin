@@ -47,6 +47,7 @@
      <Compile Include="Assets\Chain Jam\Plugins\iTween.cs" />
      <Compile Include="Assets\Chain Jam\Scripts\ChainJam.cs" />
      <Compile Include="Assets\Game\Scripts\BallController.cs" />
+     <Compile Include="Assets\Game\Scripts\GameController.cs" />
      <Compile Include="Assets\Game\Scripts\LowerArmController.cs" />
      <Compile Include="Assets\Game\Scripts\UpperArmController.cs" />
   </ItemGroup>
