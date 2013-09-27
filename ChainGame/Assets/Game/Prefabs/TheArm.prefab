@@ -403,7 +403,7 @@ HingeJoint:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_ConnectedBody: {fileID: 5400006}
-  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Anchor: {x: -.579999983, y: -.150000006, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_UseSpring: 1
   m_Spring:
