@@ -12,6 +12,12 @@ public class LowerArmController : MonoBehaviour {
 	
 	}
 	
+	public void SetPlayer(ChainJam.PLAYER player)
+	{
+		Player = player;
+		GetComponent<MeshRenderer>().sharedMaterial = GameController.MaterialForPlayer(player);
+	}
+	
 	// Update is called once per frame
 	void FixedUpdate () {
 		
