@@ -12,10 +12,11 @@ public class LowerArmController : MonoBehaviour {
 	
 	}
 	
-	public void SetPlayer(ChainJam.PLAYER player)
+	public void SetPlayer(ChainJam.PLAYER player, GameController.Team team)
 	{
 		Player = player;
 		GetComponent<MeshRenderer>().sharedMaterial = GameController.MaterialForPlayer(player);
+		Ball.GetComponent<BallController>().BallsTeam = team;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +32,7 @@ public class LowerArmController : MonoBehaviour {
 			{
 				Debug.Log("RELEASE");
 				Ball.transform.parent = null;
-//				Ball.GetComponent<Rigidbody>().AddForce(transform.right * GetComponent<Rigidbody>().angularVelocity.z * 0.6f);
+				Ball.GetComponent<Rigidbody>().AddForce(transform.right * GetComponent<Rigidbody>().angularVelocity.z * 0.6f);
 				Ball.GetComponent<BallController>().OnRelease();
 				Ball.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
 			}
