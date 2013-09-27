@@ -15,7 +15,6 @@ public class LowerArmController : MonoBehaviour {
 	public void SetPlayer(ChainJam.PLAYER player, GameController.Team team)
 	{
 		Player = player;
-		GetComponent<MeshRenderer>().sharedMaterial = GameController.MaterialForPlayer(player);
 		Ball.GetComponent<BallController>().BallsTeam = team;
 		transform.FindChild("lowerArt").GetComponent<MeshRenderer>().material.SetColor("_Color",GameController.MaterialForPlayer(player));
 	}
