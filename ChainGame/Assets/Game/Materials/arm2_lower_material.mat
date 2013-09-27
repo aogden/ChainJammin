@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: arm1_upper_material
+  m_Name: arm2_lower_material
   m_Shader: {fileID: 4800000, guid: ecf9615b42a82437ebd7681327de344a, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
@@ -16,7 +16,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 03eb26fdd8c834d33a8a5de23ac5b887, type: 3}
+          m_Texture: {fileID: 2800000, guid: 17f1aa61e513a44c09fe6bd306ad69d6, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -28,8 +28,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .192156866, g: .196078435, b: .196078435, a: 1}
+        second: {r: .0901960805, g: .674509823, b: .898039222, a: 1}
       data:
         first:
           name: _TintColor
-        second: {r: .5, g: .5, b: .5, a: .5}
+        second: {r: .0901960805, g: .674509823, b: .898039222, a: .5}
