@@ -20,10 +20,10 @@ public class LowerArmController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
+		float directionModifier = transform.position.x > 0 ? -1f : 1f;
 		if(ChainJam.GetButtonPressed(Player, ChainJam.BUTTON.A))
 		{
-			GetComponent<Rigidbody>().AddTorque(0.0f,0.0f,500f);
+			GetComponent<Rigidbody>().AddTorque(0.0f,0.0f,directionModifier*500f);
 		}
 		else if(ChainJam.GetButtonJustReleased(Player,ChainJam.BUTTON.A))
 		{
