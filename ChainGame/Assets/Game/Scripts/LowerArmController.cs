@@ -17,6 +17,7 @@ public class LowerArmController : MonoBehaviour {
 		Player = player;
 		GetComponent<MeshRenderer>().sharedMaterial = GameController.MaterialForPlayer(player);
 		Ball.GetComponent<BallController>().BallsTeam = team;
+		transform.FindChild("lowerArt").GetComponent<MeshRenderer>().material.SetColor("_Color",GameController.MaterialForPlayer(player));
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class LowerArmController : MonoBehaviour {
 		float directionModifier = transform.position.x > 0 ? -1f : 1f;
 		if(ChainJam.GetButtonPressed(Player, ChainJam.BUTTON.A))
 		{
-			GetComponent<Rigidbody>().AddTorque(0.0f,0.0f,directionModifier*500f);
+			GetComponent<Rigidbody>().AddTorque(0.0f,0.0f,directionModifier*-650f);
 		}
 		else if(ChainJam.GetButtonJustReleased(Player,ChainJam.BUTTON.A))
 		{

@@ -13,7 +13,8 @@ public class UpperArmController : MonoBehaviour {
 	public void SetPlayer(ChainJam.PLAYER player)
 	{
 		Player = player;
-		GetComponent<MeshRenderer>().sharedMaterial = GameController.MaterialForPlayer(player);
+		print (GameController.MaterialForPlayer(player));
+		transform.FindChild("upperArt").GetComponent<MeshRenderer>().material.SetColor("_Color",GameController.MaterialForPlayer(player));
 	}
 	
 	// Update is called once per frame
