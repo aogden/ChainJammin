@@ -49,6 +49,7 @@
      <Compile Include="Assets\Game\Scripts\BallController.cs" />
      <Compile Include="Assets\Game\Scripts\GameController.cs" />
      <Compile Include="Assets\Game\Scripts\LowerArmController.cs" />
+     <Compile Include="Assets\Game\Scripts\TeamScoreHUD.cs" />
      <Compile Include="Assets\Game\Scripts\UpperArmController.cs" />
      <None Include="Assets\Game\Scripts\UnlitAlpha.shader" />
   </ItemGroup>

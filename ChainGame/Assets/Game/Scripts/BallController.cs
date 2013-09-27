@@ -4,6 +4,7 @@ using System.Collections;
 public class BallController : MonoBehaviour {
 	
 	public Transform ResetTransform;
+	public GameController.Team BallsTeam;
 	
 	private Rigidbody _rigidBody;
 	private float _releaseCooldownTimer;
@@ -42,6 +43,10 @@ public class BallController : MonoBehaviour {
 		if(other.gameObject.name.Equals("Kill Floor"))
 		{	
 			Reset();
+		}
+		else if(other.gameObject.name.Equals("cup"))
+		{
+			BroadcastMessage("OnScore",BallsTeam,SendMessageOptions.DontRequireReceiver);
 		}
 	}
 		

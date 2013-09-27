@@ -6,7 +6,8 @@ public class GameController : MonoBehaviour {
 	public GameObject ArmPrefab;
 	public Transform[] ArmContainers;
 	
-	struct Team{
+	public struct Team{
+		public int index;
 		public ChainJam.PLAYER lowerArm;
 		public ChainJam.PLAYER upperArm;
 	}
@@ -19,7 +20,9 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		_teams = new Team[2];
 		_teams[0] = new Team();
+		_teams[0].index = 0;
 		_teams[1] = new Team();
+		_teams[0].index = 1;
 		AssignTeams();
 		CreateArms();
 	}
@@ -61,9 +64,22 @@ public class GameController : MonoBehaviour {
 			_arms[i].transform.localPosition = Vector3.zero;
 			_arms[i].transform.localRotation = Quaternion.identity;
 			_arms[i].GetComponentInChildren<UpperArmController>().SetPlayer(_teams[i].upperArm);
-			_arms[i].GetComponentInChildren<LowerArmController>().SetPlayer(_teams[i].lowerArm);
+			_arms[i].GetComponentInChildren<LowerArmController>().SetPlayer(_teams[i].lowerArm, GetTeamForPlayer(_teams[i].lowerArm));
 		}
 		
+	}
+	
+	Team GetTeamForPlayer(ChainJam.PLAYER player)
+	{
+		for(int i = 0; i < 2; i++)
+		{
+			if(_teams[i].lowerArm == player || _teams[i].upperArm == player)
+			{
+				return _teams[i];
+			}
+		}
+		
+		return _teams[0];
 	}
 	
 	// Update is called once per frame
