@@ -20,8 +20,12 @@ public class LowerArmController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
+		float directionModifier = transform.position.x > 0 ? -1f : 1f;
 		if(ChainJam.GetButtonPressed(Player, ChainJam.BUTTON.A))
+		{
+			GetComponent<Rigidbody>().AddTorque(0.0f,0.0f,directionModifier*-650f);
+		}
+		else if(ChainJam.GetButtonJustReleased(Player,ChainJam.BUTTON.A))
 		{
 			if(Ball != null && Ball.GetComponent<Rigidbody>().isKinematic)
 			{
@@ -32,6 +36,5 @@ public class LowerArmController : MonoBehaviour {
 				Ball.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
 			}
 		}
-		
 	}
 }
