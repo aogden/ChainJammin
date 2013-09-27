@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: arm1_upper_material
+  m_Name: arm4_upper_material
   m_Shader: {fileID: 4800000, guid: b21cf5cd483b84da8b7299deb428b51b, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
@@ -28,7 +28,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .192156866, g: .196078435, b: .196078435, a: 1}
+        second: {r: .686274529, g: .827450991, b: .125490203, a: 1}
       data:
         first:
           name: _TintColor

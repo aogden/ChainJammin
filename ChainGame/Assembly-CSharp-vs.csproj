@@ -50,6 +50,7 @@
      <Compile Include="Assets\Game\Scripts\GameController.cs" />
      <Compile Include="Assets\Game\Scripts\LowerArmController.cs" />
      <Compile Include="Assets\Game\Scripts\UpperArmController.cs" />
+     <None Include="Assets\Game\Scripts\UnlitAlpha.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
