@@ -60,8 +60,8 @@ public class GameController : MonoBehaviour {
 			_arms[i].transform.parent = ArmContainers[i];
 			_arms[i].transform.localPosition = Vector3.zero;
 			_arms[i].transform.localRotation = Quaternion.identity;
-			_arms[i].GetComponentInChildren<UpperArmController>().Player = _teams[i].upperArm;
-			_arms[i].GetComponentInChildren<LowerArmController>().Player = _teams[i].lowerArm;
+			_arms[i].GetComponentInChildren<UpperArmController>().SetPlayer(_teams[i].upperArm);
+			_arms[i].GetComponentInChildren<LowerArmController>().SetPlayer(_teams[i].lowerArm);
 		}
 		
 	}
@@ -93,14 +93,14 @@ public class GameController : MonoBehaviour {
 		switch (player)
 		{
 		case ChainJam.PLAYER.PLAYER1:
-			return Resources.Load("Materials/Player1.mat") as Material;
+			return Resources.Load("Materials/Player1") as Material;
 		case ChainJam.PLAYER.PLAYER2:
-			return Resources.Load("Materials/Player2.mat") as Material;
+			return Resources.Load("Materials/Player2") as Material;
 		case ChainJam.PLAYER.PLAYER3:
-			return Resources.Load("Materials/Player3.mat") as Material;
+			return Resources.Load("Materials/Player3") as Material;
 		case ChainJam.PLAYER.PLAYER4:
-			return Resources.Load("Materials/Player4.mat") as Material;
+			return Resources.Load("Materials/Player4") as Material;
 		}
-		return Resources.Load("Materials/Player1.mat") as Material;
+		return Resources.Load("Materials/Player1") as Material;
 	}
 }
